@@ -4,11 +4,14 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const math = require("remark-math");
+const katex = require("rehype-katex");
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Brick Bar',
   tagline: 'Bricklayers are cool',
-  favicon: 'img/avatar.png',
+  favicon: 'img/favicon2.png',
 
   // Set the production url of your site here
   url: 'https://brickbar1024.github.io/',
@@ -42,29 +45,92 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/BrickBar1024/brickbar1024.github.io/tree/main/',
+          remarkPlugins: [math],
+          rehypePlugins: [[katex, { strict: false }]],
+        
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'https://github.com/BrickBar1024/brickbar1024.github.io/tree/main/',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
   ],
+  plugins: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        language: ["en", "zh"],
+        // ```
+        // When applying `zh` in language, please install `nodejieba` in your project.
+        translations: {
+          search_placeholder: "Search",
+          see_all_results: "See all results",
+          no_results: "No results.",
+          search_results_for: 'Search results for "{{ keyword }}"',
+          search_the_documentation: "Search the documentation",
+          count_documents_found: "{{ count }} document found",
+          count_documents_found_plural: "{{ count }} documents found",
+          no_documents_were_found: "No documents were found",
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+
+        id: 'paper',
+        routeBasePath: 'paper',
+        path: 'paper',
+        editUrl:
+            'https://github.com/BrickBar1024/brickbar1024.github.io/tree/main/',
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'news',
+        routeBasePath: 'new',
+        path: 'new',
+        editUrl:
+            'https://github.com/BrickBar1024/brickbar1024.github.io/tree/main/',
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'hodgwpodge',
+        routeBasePath: 'hodgwpodge',
+        path: 'hodgwpodge',
+        editUrl:
+            'https://github.com/BrickBar1024/brickbar1024.github.io/tree/main/',
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+      },
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Brick Bar',
+        title: 'BrickBar',
         logo: {
           alt: 'My Site Logo',
           src: 'img/favicon2.png',
@@ -74,14 +140,22 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Notes',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/paper', label: 'Paper', position: 'left'},
+          { to: '/new', label: 'News', position: 'left' },
+          { to: '/hodgwpodge', label: 'Hodgwpodge', position: 'left' },
+          {
+            href: "/about",
+            label: "Team",
+            position: "right",
+          },
           {
             href: 'https://github.com/BrickBar1024',
             label: 'GitHub',
             position: 'right',
           },
+          
         ],
       },
       footer: {
@@ -127,13 +201,19 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} Brick Bar, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} BrickBar, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+  stylesheets: [
+    {
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.20/dist/katex.min.css",
+      crossorigin: "anonymous",
+    },
+  ],
 };
 
 module.exports = config;
