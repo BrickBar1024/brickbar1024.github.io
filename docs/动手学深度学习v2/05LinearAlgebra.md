@@ -27,6 +27,7 @@
     
 - 长度
   
+
 ![img](05LinearAlgebra/img1.png)
     
 
@@ -57,14 +58,17 @@
   
     $c = Ab\ where\ c_i = \sum_{j} A_{ij}b_j$
     
+
 ![img](05LinearAlgebra/img4.png)
     
 - 乘法（矩阵乘以矩阵）
   
+
 ![img](05LinearAlgebra/img5.png)
     
 - 范数
   
+
 ![img](05LinearAlgebra/img6.png)
     
     - 取决于如何衡量b和c的长度
@@ -72,31 +76,31 @@
     - 矩阵范数：最小的满足上面公式的值
     - Frobenius范数
       
-        ![img](05LinearAlgebra/img7.png)
+![img](05LinearAlgebra/img7.png)
         
 
 ## 特殊矩阵
 
 - 对称和反对称
   
-    ![img](05LinearAlgebra/img8.png)
+![img](05LinearAlgebra/img8.png)
     
-    ![img](05LinearAlgebra/img9.png)
+![img](05LinearAlgebra/img9.png)
     
 - 正定
   
-    ![img](05LinearAlgebra/img10.png)
+![img](05LinearAlgebra/img10.png)
     
 - 正交矩阵
     - 所有行都相互正交
     - 所有行都有单位长度
       
-        ![img](05LinearAlgebra/img11.png)
+![img](05LinearAlgebra/img11.png)
         
     - 可以写成$UU^T = 1$
 - 置换矩阵
   
-    ![img](05LinearAlgebra/img12.png)
+![img](05LinearAlgebra/img12.png)
     
     - 置换矩阵是正交矩阵
 
@@ -105,7 +109,7 @@
 - 特征向量和特征值
     - 不被矩阵改变方向的向量
       
-        ![img](05LinearAlgebra/img13.png)
+![img](05LinearAlgebra/img13.png)
         
     - 对称矩阵总是可以找到特征向量
 
