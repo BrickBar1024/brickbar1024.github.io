@@ -13,7 +13,7 @@
     $c = sin a$
     
 - 长度
-![img](05LinearAlgebra/img.png)
+  ![img](./05LinearAlgebra/img.png)
   
 
 ## 向量
@@ -29,10 +29,10 @@
 - 长度
   
 
-![img](05LinearAlgebra/img1.png)
+![img](./05LinearAlgebra/img1.png)
     
 
-![img](05LinearAlgebra/img2.png)
+![img](./05LinearAlgebra/img2.png)
 
 - 点乘
   
@@ -43,7 +43,7 @@
     $a^Tb\ = \sum_{i} a_ib_i \ = \ 0$
     
 
-![img](05LinearAlgebra/img3.png)
+![img](./05LinearAlgebra/img3.png)
 
 ## 矩阵
 
@@ -60,17 +60,17 @@
     $c = Ab\ where\ c_i = \sum_{j} A_{ij}b_j$
     
 
-![img](05LinearAlgebra/img4.png)
+![img](./05LinearAlgebra/img4.png)
     
 - 乘法（矩阵乘以矩阵）
   
 
-![img](05LinearAlgebra/img5.png)
+![img](./05LinearAlgebra/img5.png)
     
 - 范数
   
 
-![img](05LinearAlgebra/img6.png)
+![img](./05LinearAlgebra/img6.png)
     
     - 取决于如何衡量b和c的长度
 - 常见范数
@@ -78,7 +78,7 @@
     - Frobenius范数
       
 
-![img](05LinearAlgebra/img7.png)
+![img](./05LinearAlgebra/img7.png)
         
 
 ## 特殊矩阵
@@ -86,27 +86,27 @@
 - 对称和反对称
   
 
-![img](05LinearAlgebra/img8.png)
+![img](./05LinearAlgebra/img8.png)
     
-![img](05LinearAlgebra/img9.png)
+![img](./05LinearAlgebra/img9.png)
     
 - 正定
   
 
-![img](05LinearAlgebra/img10.png)
+![img](./05LinearAlgebra/img10.png)
     
 - 正交矩阵
     - 所有行都相互正交
     - 所有行都有单位长度
       
 
-![img](05LinearAlgebra/img11.png)
+![img](./05LinearAlgebra/img11.png)
         
     - 可以写成$UU^T = 1$
 - 置换矩阵
   
 
-![img](05LinearAlgebra/img12.png)
+![img](./05LinearAlgebra/img12.png)
     
     - 置换矩阵是正交矩阵
 
@@ -116,7 +116,7 @@
     - 不被矩阵改变方向的向量
       
 
-![img](05LinearAlgebra/img13.png)
+![img](./05LinearAlgebra/img13.png)
         
     - 对称矩阵总是可以找到特征向量
 
@@ -251,7 +251,7 @@ sum_A = A.sum(axis=1, keepdims=True)
 A / sum_A
 # tensor([[0.0000, 0.1667, 0.3333, 0.5000],
 #         [0.1818, 0.2273, 0.2727, 0.3182],
-#         [0.2105, 0.2368, 0.2632, 0.2895],
+#         [0.21./05, 0.2368, 0.2632, 0.2895],
 #         [0.2222, 0.2407, 0.2593, 0.2778],
 #         [0.2286, 0.2429, 0.2571, 0.2714]])
 
@@ -286,10 +286,10 @@ torch.mm(A, B)
 #         [70., 70., 70.]])
 ```
 
-![img](05LinearAlgebra/img14.png)
+![img](./05LinearAlgebra/img14.png)
 
 ## 补充
 
-![img](05LinearAlgebra/img15.png)
+![img](./05LinearAlgebra/img15.png)
 
-![img](05LinearAlgebra/img16.png)
+![img](./05LinearAlgebra/img16.png)

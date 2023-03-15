@@ -8,9 +8,9 @@
 
 ### N维数组是机器学习和神经网络的主要数据结构
 
-![img](04DataManipulationPreprocessing/img.png)
+![img](./04DataManipulationPreprocessing/img.png)
 
-![img](04DataManipulationPreprocessing/img1.png)
+![img](./04DataManipulationPreprocessing/img1.png)
 
 ### 创建数组需要
 
@@ -18,11 +18,11 @@
 - 每个元素的数据类型：例如32位浮点数
 - 每个元素的值，例如全是0，或者随机数
 
-![img](04DataManipulationPreprocessing/img2.png)
+![img](./04DataManipulationPreprocessing/img2.png)
 
 ### 访问元素
 
-![img](04DataManipulationPreprocessing/img3.png)
+![img](./04DataManipulationPreprocessing/img3.png)
 
 ### Code（太简单了，就写在一起了
 

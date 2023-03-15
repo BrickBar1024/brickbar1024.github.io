@@ -11,7 +11,7 @@
 3. 一个*目标函数*（objective function），用来量化模型的有效性
 4. 调整模型参数以优化目标函数的*算法*（algorithm）
 
-![img](02Introduction/img.png)
+![img](./02Introduction/img.png)
 
 ## 图片分类
 
@@ -19,40 +19,40 @@ IMAGENET
 
 2017年的时候 错误率就已经降到5%以下了
 
-![img](02Introduction/img1.png)
+![img](./02Introduction/img1.png)
 
 ## 物体检测和分割
 
-![img](02Introduction/img2.png)
+![img](./02Introduction/img2.png)
 
 ## 样式迁移
 
-![img](02Introduction/img3.png)
+![img](./02Introduction/img3.png)
 
 ## 人脸合成
 
-![img](02Introduction/img4.png)
+![img](./02Introduction/img4.png)
 
 ## 文字生成图片
 
-![img](02Introduction/img5.png)
+![img](./02Introduction/img5.png)
 
 ## 文字生成
 
-![img](02Introduction/img6.png)
+![img](./02Introduction/img6.png)
 
 ## 无人驾驶
 
-![img](02Introduction/img7.png)
+![img](./02Introduction/img7.png)
 
 ## 案例分析-广告点击
 
-![img](02Introduction/img8.png)
+![img](./02Introduction/img8.png)
 
 ## 预测与训练
 
-![img](02Introduction/img9.png)
+![img](./02Introduction/img9.png)
 
 ## 完整的故事
 
-![img](02Introduction/img10.png)
+![img](./02Introduction/img10.png)
