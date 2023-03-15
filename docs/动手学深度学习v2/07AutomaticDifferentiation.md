@@ -6,20 +6,20 @@
 
 - 标量链式法则
   
-    ![img](07AutomaticDifferentiation/img.png)
+![img](07AutomaticDifferentiation/img.png)
     
 - 拓展到向量
   
-    ![Untitled](07AutomaticDifferentiation/img1.png)
+![img](07AutomaticDifferentiation/img1.png)
     
 
 ### 🌰 1
 
-![Untitled](07AutomaticDifferentiation/img2.png)
+![img](07AutomaticDifferentiation/img2.png)
 
 ### 🌰 2
 
-![Untitled](07AutomaticDifferentiation/img3.png)
+![img](07AutomaticDifferentiation/img3.png)
 
 ## 自动求导
 
@@ -27,11 +27,11 @@
 - 它有别于
     - 符号求导
       
-        ![Untitled](07AutomaticDifferentiation/img4.png)
+![img](07AutomaticDifferentiation/img4.png)
         
     - 数值求导
       
-        ![Untitled](07AutomaticDifferentiation/img5.png)
+![img](07AutomaticDifferentiation/img5.png)
         
 
 ### 计算图
@@ -39,7 +39,7 @@
 - 将代码分解成操作子
 - 将计算表示成一个无环图
   
-    ![Untitled](07AutomaticDifferentiation/img6.png)
+![img](07AutomaticDifferentiation/img6.png)
     
 - 显示构造
   
@@ -56,34 +56,34 @@
 
 - 链式法则：
   
-    ![Untitled](07AutomaticDifferentiation/img7.png)
+![img](07AutomaticDifferentiation/img7.png)
     
 - 正向累积：
   
-    ![Untitled](07AutomaticDifferentiation/img8.png)
+![img](07AutomaticDifferentiation/img8.png)
     
 - 反向累积、又称反向传递：
   
-    ![Untitled](07AutomaticDifferentiation/img9.png)
+![img](07AutomaticDifferentiation/img9.png)
     
 
 #### 反向累积
 
 1、
 
-![Untitled](07AutomaticDifferentiation/img10.png)
+![img](07AutomaticDifferentiation/img10.png)
 
 2、
 
-![Untitled](07AutomaticDifferentiation/img11.png)
+![img](07AutomaticDifferentiation/img11.png)
 
 3、
 
-![Untitled](07AutomaticDifferentiation/img12.png)
+![img](07AutomaticDifferentiation/img12.png)
 
 4、
 
-![Untitled](07AutomaticDifferentiation/img13.png)
+![img](07AutomaticDifferentiation/img13.png)
 
 ##### 总结
 
@@ -92,7 +92,7 @@
 - 反向：从相反方向执行图
     - 去除不需要的枝
       
-        ![Untitled](07AutomaticDifferentiation/img14.png)
+        ![img](07AutomaticDifferentiation/img14.png)
         
 
 ##### 复杂度

@@ -12,10 +12,8 @@
     
     $c = sin a$
     
-- 长度
+- 长度![img](05LinearAlgebra/img.png)
   
-    ![img](05LinearAlgebra/img.png)
-    
 
 ## 向量
 
@@ -29,7 +27,7 @@
     
 - 长度
   
-    ![img](05LinearAlgebra/img1.png)
+![img](05LinearAlgebra/img1.png)
     
 
 ![img](05LinearAlgebra/img2.png)
@@ -59,15 +57,15 @@
   
     $c = Ab\ where\ c_i = \sum_{j} A_{ij}b_j$
     
-    ![img](05LinearAlgebra/img4.png)
+![img](05LinearAlgebra/img4.png)
     
 - 乘法（矩阵乘以矩阵）
   
-    ![img](05LinearAlgebra/img5.png)
+![img](05LinearAlgebra/img5.png)
     
 - 范数
   
-    ![img](05LinearAlgebra/img6.png)
+![img](05LinearAlgebra/img6.png)
     
     - 取决于如何衡量b和c的长度
 - 常见范数
