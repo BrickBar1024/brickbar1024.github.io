@@ -124,11 +124,28 @@ const config = {
         rehypePlugins: [katex],
       },
     ],
+    [
+      'ideal-image',
+      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
+      ({
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      }),
+    ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: 'announcementBar-2', // Increment on change
+        content: `⭐️ If you like BrickBar, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/BrickBar1024/brickbar1024.github.io">GitHub</a>`,
+
+      },
       navbar: {
         title: 'BrickBar',
         logo: {
@@ -143,7 +160,7 @@ const config = {
             label: 'Notes',
           },
           { to: '/paper', label: 'Paper', position: 'left'},
-          { to: '/new', label: 'News', position: 'left' },
+          {to: 'showcase', label: 'News', position: 'left'},
           { to: '/hodgwpodge', label: 'Hodgwpodge', position: 'left' },
           {
             href: "/about",
