@@ -42,6 +42,8 @@ export type TagType =
   // DO NOT USE THIS TAG: we choose sites to add to favorites
   | 'favorite'
   | 'AI'
+  | 'SelfAttention'
+  | 'CVPR'
 
 // Add sites to this list
 // prettier-ignore
@@ -54,7 +56,14 @@ const Users: User[] = [
     source: 'https://arxiv.org/abs/2103.07579',
     tags: ['AI','favorite'],
   },
-
+  {
+    title: 'GRL',
+    description: 'CVPR23｜即插即用系列！一种轻量高效的自注意力机制助力图像恢复网络问鼎SOTA',
+    preview: require('./showcase/GRL.png'),
+    website: 'https://mp.weixin.qq.com/s/eMv3oN515it9V--MgEXCZw',
+    source: 'https://arxiv.org/pdf/2303.00748',
+    tags: ['AI','SelfAttention','CVPR'],
+  },
   
 
 
@@ -84,8 +93,8 @@ export const Tags: {[type in TagType]: Tag} = {
     label: translate({message: 'Favorite'}),
     description: translate({
       message:
-        'Our favorite Docusaurus sites that you must absolutely check out!',
-      id: 'showcase.tag.favorite.description',
+        'Our favorite news!',
+      id: 'showcase.tag.Favorite.description',
     }),
     color: '#e9669e',
   },
@@ -96,6 +105,22 @@ export const Tags: {[type in TagType]: Tag} = {
       id: 'showcase.tag.AI.description',
     }),
     color: '#39ca30',
+  },
+  SelfAttention: {
+    label: translate({message: 'Self-Attention'}),
+    description: translate({
+      message: 'Self-attention!',
+      id: 'showcase.tag.SelfAttention.description',
+    }),
+    color: '#dfd545',
+  },
+  CVPR: {
+    label: translate({message: 'CVPR'}),
+    description: translate({
+      message: 'CVPR!',
+      id: 'showcase.tag.CVPR.description',
+    }),
+    color: '#a44fb7',
   },
 };
 

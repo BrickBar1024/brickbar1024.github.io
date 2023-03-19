@@ -94,20 +94,12 @@ const config = {
         id: 'paper',
         routeBasePath: 'paper',
         path: 'paper',
+        showReadingTime: true,
         editUrl:
             'https://github.com/BrickBar1024/brickbar1024.github.io/tree/main/',
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        id: 'news',
-        routeBasePath: 'new',
-        path: 'new',
-        editUrl:
-            'https://github.com/BrickBar1024/brickbar1024.github.io/tree/main/',
+        blogSidebarTitle: "All posts",
+        blogSidebarCount: "ALL",
+        postsPerPage: 5,
         remarkPlugins: [math],
         rehypePlugins: [katex],
       },
@@ -118,8 +110,12 @@ const config = {
         id: 'hodgwpodge',
         routeBasePath: 'hodgwpodge',
         path: 'hodgwpodge',
+        postsPerPage: 5,
+        showReadingTime: true,
         editUrl:
             'https://github.com/BrickBar1024/brickbar1024.github.io/tree/main/',
+        blogSidebarTitle: "All posts",
+        blogSidebarCount: "ALL",
         remarkPlugins: [math],
         rehypePlugins: [katex],
       },
@@ -160,8 +156,8 @@ const config = {
             label: 'Notes',
           },
           { to: '/paper', label: 'Paper', position: 'left'},
-          {to: 'showcase', label: 'News', position: 'left'},
           { to: '/hodgwpodge', label: 'Hodgwpodge', position: 'left' },
+          {to: 'showcase', label: 'News', position: 'left'},
           {
             href: "/about",
             label: "Team",
