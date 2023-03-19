@@ -1,46 +1,11 @@
----
-sidebar_position: 1
----
-# Tutorial Intro
+# Notes Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **Notes in less than 5 minutes**.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+Notes里记录了每个bricklayer的学习笔记，包括看的一系列学习视频，可能是大量搬运视频里的内容，或者是补充自己的理解，网上找到的资料等，有错误的地方欢迎与bricklayer们交流
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### 动手学深度学习v2
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+此处搬运B站李沐老师（沐神 的[讲解视频](https://www.bilibili.com/video/BV1J54y187f9?vd_source=5ec85dfc5468a21a485b1b1d4d271219)，教材为[中文版](https://zh.d2l.ai/), [英文版](https://d2l.ai/)，由于Zhiying同学偷懒，做的笔记可能会非常简略，会有其他bricklayer进行详细补充

@@ -13,7 +13,7 @@
     $c = sin a$
     
 - 长度
-  ![img](./05LinearAlgebra/img.png)
+  ![img](./src/LinearAlgebra/img.png)
   
 
 ## 向量
@@ -29,10 +29,10 @@
 - 长度
   
 
-![img](./05LinearAlgebra/img1.png)
+![img](./src/LinearAlgebra/img1.png)
     
 
-![img](./05LinearAlgebra/img2.png)
+![img](./src/LinearAlgebra/img2.png)
 
 - 点乘
   
@@ -43,7 +43,7 @@
     $a^Tb\ = \sum_{i} a_ib_i \ = \ 0$
     
 
-![img](./05LinearAlgebra/img3.png)
+![img](./src/LinearAlgebra/img3.png)
 
 ## 矩阵
 
@@ -60,17 +60,17 @@
     $c = Ab\ where\ c_i = \sum_{j} A_{ij}b_j$
     
 
-![img](./05LinearAlgebra/img4.png)
+![img](./src/LinearAlgebra/img4.png)
     
 - 乘法（矩阵乘以矩阵）
   
 
-![img](./05LinearAlgebra/img5.png)
+![img](./src/LinearAlgebra/img5.png)
     
 - 范数
   
 
-![img](./05LinearAlgebra/img6.png)
+![img](./src/LinearAlgebra/img6.png)
     
     - 取决于如何衡量b和c的长度
 - 常见范数
@@ -78,7 +78,7 @@
     - Frobenius范数
       
 
-![img](./05LinearAlgebra/img7.png)
+![img](./src/LinearAlgebra/img7.png)
         
 
 ## 特殊矩阵
@@ -86,27 +86,27 @@
 - 对称和反对称
   
 
-![img](./05LinearAlgebra/img8.png)
+![img](./src/LinearAlgebra/img8.png)
     
-![img](./05LinearAlgebra/img9.png)
+![img](./src/LinearAlgebra/img9.png)
     
 - 正定
   
 
-![img](./05LinearAlgebra/img10.png)
+![img](./src/LinearAlgebra/img10.png)
     
 - 正交矩阵
     - 所有行都相互正交
     - 所有行都有单位长度
       
 
-![img](./05LinearAlgebra/img11.png)
+![img](./src/LinearAlgebra/img11.png)
         
     - 可以写成$UU^T = 1$
 - 置换矩阵
   
 
-![img](./05LinearAlgebra/img12.png)
+![img](./src/LinearAlgebra/img12.png)
     
     - 置换矩阵是正交矩阵
 
@@ -116,7 +116,7 @@
     - 不被矩阵改变方向的向量
       
 
-![img](./05LinearAlgebra/img13.png)
+![img](./src/LinearAlgebra/img13.png)
         
     - 对称矩阵总是可以找到特征向量
 
@@ -286,10 +286,10 @@ torch.mm(A, B)
 #         [70., 70., 70.]])
 ```
 
-![img](./05LinearAlgebra/img14.png)
+![img](./src/LinearAlgebra/img14.png)
 
 ## 补充
 
-![img](./05LinearAlgebra/img15.png)
+![img](./src/LinearAlgebra/img15.png)
 
-![img](./05LinearAlgebra/img16.png)
+![img](./src/LinearAlgebra/img16.png)
