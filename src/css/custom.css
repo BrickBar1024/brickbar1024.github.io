@@ -148,11 +148,13 @@
   }
 }
 h1 { font-size: 2.2rem !important; }
+
 .markdown p img:only-child {
-  max-width: 70%;
+  max-width: 65%;
   margin:0 auto;
   display:block;
 }
+
 .math-display {
   /* Enable a thin scrollbar if overflow... */
   overflow-x: auto;
