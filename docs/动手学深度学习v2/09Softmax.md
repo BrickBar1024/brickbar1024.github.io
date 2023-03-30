@@ -1,9 +1,5 @@
 # 09 Softmax回归+损失函数+图片分类数据集
 
-沐神视频讲解：[B站](https://www.bilibili.com/video/BV1K64y1Q7wu/)
-
-教材：[zh-v2.d2l.ai](https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression.html)
-
 ## Softmax回归
 
 虽然叫回归，但是是一个分类问题
@@ -18,7 +14,7 @@
     ![img](./src/Softmax/img1.png)
     
 
-#### Kaggle上的分类问题
+### Kaggle上的分类问题
 
 [将人类蛋白质显微镜图片分成28类](https://www.kaggle.com/c/human-protein-atlas-image-classification)
 
@@ -34,22 +30,11 @@
 
 ### 从回归到多类分类
 
-#### 回归
-
-- 单连续数值输出
-- 自然区间R
-- 跟真实值的区别作为损失
+#### 1、定义
 
 ![img](./src/Softmax/img5.png)
 
-#### 分类
-
-- 通常多个输出
-- 输出i是预测为第i类的置信度
-
-![img](./src/Softmax/img6.png)
-
-#### 从回归到多类分类 —— 均方损失
+#### 2、均方损失
 
 - 对类别进行一位有效编码
     - $y = [y_1, y_2, …, y_n]^T$
@@ -60,7 +45,7 @@
     $\hat{y} = \mathop{argmax}\limits_{i}\ o_i$
     
 
-#### 从回归到多类分类 —— 无校验比例
+#### 3、无校验比例
 
 - 对类别进行一位有效编码
 - 最大值最为预测
@@ -72,7 +57,7 @@
     $o_y - o_i \geq \Delta(y,i)$
     
 
-#### 从回归到多类分类 —— 校验比例
+#### 4、校验比例
 
 - 输出匹配概率(非负，和为1)
   
@@ -86,7 +71,7 @@
 
 ### Softmax和交叉熵损失
 
-- 交叉熵常用来衡量两个概率的区别
+- *交叉熵损失*(cross-entropy loss)常用来衡量两个概率的区别
   
     $H(p, q) = \mathop{\sum}\limits_{i}\ -p_ilog(q_i)$
     
@@ -96,25 +81,18 @@
     
 - 其梯度是真实概率和预测概率的区别
   
-  
-    ![img](./src/Softmax/img7.png)
+    $\partial_{oj}l(y, \hat{y}) = \frac{exp(o_j)}{\sum^q_{k=1}exp(o_k)}-y_j = softmax(o)_j - y_j$
     
-
-### 总结
-
-- Softmax回归是一个多类分类模型
-- 使用Softmax操作子得到每个类的预测置信度
-- 使用交叉熵来衡量预测和标号的区别
 
 ## 损失函数
 
-![img](./src/Softmax/img8.png)
+![img](./src/Softmax/img6.png)
 
-### L2 Loss
+### 1、L2 Loss
 
-$l(y,y^’) = \frac{1}{2}{(y - y^’)}^2$
+$l(y,y^’) = \frac{1}{2}(y - y')^2$
 
-![img](./src/Softmax/img9.png)
+![img](./src/Softmax/img7.png)
 
 蓝色：$y=0$的时候，变化预测值$y^’$的函数
 
@@ -122,7 +100,7 @@ $l(y,y^’) = \frac{1}{2}{(y - y^’)}^2$
 
 黄色：损失函数的梯度
 
-![img](./src/Softmax/img10.png)
+![img](./src/Softmax/img8.png)
 
 梯度下降的时候，是往负梯度方向更新参数，导数就决定怎么更新参数的
 
@@ -130,27 +108,27 @@ $l(y,y^’) = \frac{1}{2}{(y - y^’)}^2$
 
 (不是特别好的事情：当离原点比较远的值的时候，不一定想要那么大的梯度来更新参数，所以可以考虑绝对值损失函数L1 Loss
 
-### L1 Loss
+### 2、L1 Loss
 
-$l(y,y^’)  = |y - y^’|$
+$l(y,y^’)  = \lvert y - y^’ \rvert$
 
-![img](./src/Softmax/img11.png)
+![img](./src/Softmax/img9.png)
 
 当真实值与预测值差别比较大的时候，不管多远，梯度都是常数，权重更新也不会很大，带来很多稳定性的好处
 
 (缺点：零点处不可导，在零点处有-1到+1之间剧烈的变化，这个不平滑性导致预测值和真实值靠的比较近的时候，也就是当优化到末期的时候，这个地方会变得不那么稳定
 
-![img](./src/Softmax/img12.png)
+![img](./src/Softmax/img10.png)
 
 不管多远，梯度基本上是帮你以同样的力度往原点扯
 
-### Huber’ s Robust Loss
+### 3、Huber’ s Robust Loss
 
 结合L1、L2的优点，避免他们的缺点
 
-![img](./src/Softmax/img13.png)
+![img](./src/Softmax/img11.png)
 
-![img](./src/Softmax/img14.png)
+![img](./src/Softmax/img12.png)
 
 当预测值和真实值差的比较远的时候，均匀的力度拉，但靠近原点的时候，优化末期的时候，梯度的绝对值越来越小，保证优化比较平滑，而不会出现太多数值上的问题
 
@@ -293,7 +271,7 @@ X.sum(0, keepdim=True), X.sum(1, keepdim=True)
 
 实现softmax
 
-![img](./src/Softmax/img15.png)
+![img](./src/Softmax/img13.png)
 
 ```python
 def softmax(X):
@@ -321,7 +299,7 @@ X_prob, X_prob.sum(1)
 ```python
 def net(X):
   	# -1:电脑算一下，这里是batch size 
-    # X:reshape之后是256*784
+  	# X:reshape之后是256*784
     return softmax(torch.matmul(X.reshape((-1, W.shape[0])), W) + b)
 ```
 
@@ -348,7 +326,7 @@ y_hat[[0, 1], y]
 ```python
 def cross_entropy(y_hat, y):
     return - torch.log(y_hat[range(len(y_hat)), y])
-  
+
 cross_entropy(y_hat, y)
 ```
 
@@ -514,7 +492,7 @@ train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 
 - Output
   
-    ![img](./src/Softmax/img16.png)
+    ![img](./src/Softmax/img14.png)
     
 
 对图像进行分类预测
@@ -535,7 +513,7 @@ predict_ch3(net, test_iter)
 
 - Output
   
-    ![img](./src/Softmax/img17.png)
+    ![img](./src/Softmax/img15.png)
     
 
 ## softmax回归的简洁实现
@@ -584,4 +562,4 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 
 - Output
   
-    ![img](./src/Softmax/img18.png)
+    ![img](./src/Softmax/img16.png)
