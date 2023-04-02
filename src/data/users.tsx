@@ -90,7 +90,7 @@ const Users: User[] = [
   {
     title: '论文Results写作',
     description: '论文中的「Results」部分怎么写？这个小细节千万不能忽略......',
-    preview: require('./showcase/Result.png'),
+    preview: require('./showcase/result.png'),
     website: 'https://mp.weixin.qq.com/s/HipWd0Y1DS8yb8hiqhhOTA',
     source: 'https://mp.weixin.qq.com/s/HipWd0Y1DS8yb8hiqhhOTA',
     tags: ['Writing'],
