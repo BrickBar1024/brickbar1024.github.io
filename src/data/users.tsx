@@ -170,10 +170,18 @@ const Users: User[] = [
   {
     title: '微软亚洲研究院最新工作｜DeepMIM：MIM中引入深度监督方法​',
     description: 'DeepMIM旨在网络的浅层加入额外的监督，使得浅层特征的学习更有意义',
-    preview: require('./showcase/CrossEntropy.png'),
+    preview: require('./showcase/DeepMIM.png'),
     website: 'https://mp.weixin.qq.com/s/suhOmVh9c4IwKt9kMfCRKA',
     source: 'https://arxiv.org/pdf/2303.08817.pdf',
     tags: ['AI', 'Transformer'],
+  },
+  {
+    title: 'CVPR2023 | 港科大 & 腾讯 AI Lab & 港大联合出品：有趣的动态 3D 场景重建​',
+    description: 'CVPR2023 | 港科大 & 腾讯 AI Lab & 港大联合出品：有趣的动态 3D 场景重建',
+    preview: require('./showcase/3DReconstruction.png'),
+    website: 'https://mp.weixin.qq.com/s/lkF4Nkdfv6qGG3d4a_FRzQ',
+    source: 'https://arxiv.org/abs/2303.05312',
+    tags: ['AI', 'CVPR'],
   },
 
   /*
