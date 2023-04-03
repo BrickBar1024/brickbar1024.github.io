@@ -325,14 +325,6 @@ const Users: User[] = [
     tags: ['AI'],
   },
   {
-    title: '理解并统一14种归因算法,让神经网络具有可解释性',
-    description: '理解并统一14种归因算法,让神经网络具有可解释性',
-    preview: require('./showcase/AttributionAlgorithm.png'),
-    website: 'https://mp.weixin.qq.com/s/G3CM4dwQ5DIODlNAQNPayQ',
-    source: 'https://arxiv.org/pdf/2303.01506.pdf',
-    tags: ['AI'],
-  },
-  {
     title: '一文看懂CV中的注意力机制',
     description: '一文看懂CV中的注意力机制',
     preview: require('./showcase/Attention.png'),
