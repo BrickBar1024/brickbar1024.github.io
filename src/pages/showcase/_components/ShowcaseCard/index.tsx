@@ -9,7 +9,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import Image from '@theme/IdealImage';
+// import Image from '@theme/IdealImage';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
 import {
   Tags,
@@ -18,22 +18,22 @@ import {
   type User,
   type Tag,
 } from '@site/src/data/users';
-import {sortBy} from '@site/src/utils/jsUtils';
+import { sortBy } from '@site/src/utils/jsUtils';
 import Heading from '@theme/Heading';
 import Tooltip from '../ShowcaseTooltip';
 import styles from './styles.module.css';
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(
-  ({label, color, description}, ref) => (
+  ({ label, color, description }, ref) => (
     <li ref={ref} className={styles.tag} title={description}>
       <span className={styles.textLabel}>{label.toLowerCase()}</span>
-      <span className={styles.colorLabel} style={{backgroundColor: color}} />
+      <span className={styles.colorLabel} style={{ backgroundColor: color }} />
     </li>
   ),
 );
 
-function ShowcaseCardTag({tags}: {tags: TagType[]}) {
-  const tagObjects = tags.map((tag) => ({tag, ...Tags[tag]}));
+function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
+  const tagObjects = tags.map((tag) => ({ tag, ...Tags[tag] }));
 
   // Keep same order for all tags
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) =>
@@ -68,12 +68,13 @@ function getCardImage(user: User): string {
   );
 }
 
-function ShowcaseCard({user}: {user: User}) {
+function ShowcaseCard({ user }: { user: User }) {
   const image = getCardImage(user);
   return (
     <li key={user.title} className="card shadow--md">
       <div className={clsx('card__image', styles.showcaseCardImage)}>
-        <Image img={image} alt={user.title} />
+        {/* <Image img={image} alt={user.title} /> */}
+        <img src={image.src.src} />
       </div>
       <div className="card__body">
         <div className={clsx(styles.showcaseCardHeader)}>
