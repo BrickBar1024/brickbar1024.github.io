@@ -42,15 +42,20 @@ export type TagType =
   // DO NOT USE THIS TAG: we choose sites to add to favorites
   | 'favorite'
   | 'AI'
-  | 'SelfAttention'
+  | 'Attention'
   | 'CVPR'
   | 'MultiModality'
   | 'ImageFusion'
   | 'ChatGPT'
   | 'Writing'
   | 'GPT4'
-  | 'Treasury'
+  | 'Tips'
   | 'Transformer'
+  | 'ResNet'
+  | 'ActiveLearning'
+  | 'DiffusionModel'
+  | 'RecommendationSystems'
+  | 'GAN'
 
 // Add sites to this list
 // prettier-ignore
@@ -61,7 +66,7 @@ const Users: User[] = [
     preview: require('./showcase/ResNet-RS.png'),
     website: 'https://mp.weixin.qq.com/s/I27DJYnV9RB7P21i9Tt3WQ',
     source: 'https://arxiv.org/abs/2103.07579',
-    tags: ['AI','favorite'],
+    tags: ['AI','favorite','ResNet'],
   },
   {
     title: 'GRL',
@@ -69,7 +74,7 @@ const Users: User[] = [
     preview: require('./showcase/GRL.png'),
     website: 'https://mp.weixin.qq.com/s/eMv3oN515it9V--MgEXCZw',
     source: 'https://arxiv.org/pdf/2303.00748',
-    tags: ['AI','SelfAttention','CVPR'],
+    tags: ['AI','Attention','CVPR'],
   },
   {
     title: 'CDDFuse',
@@ -141,7 +146,7 @@ const Users: User[] = [
     preview: require('./showcase/ActiveLearning.png'),
     website: 'https://mp.weixin.qq.com/s/qAgZa7E3TF466Oxkva1mJA',
     source: 'https://mp.weixin.qq.com/s/qAgZa7E3TF466Oxkva1mJA',
-    tags: ['AI'],
+    tags: ['AI','ActiveLearning'],
   },
   {
     title: '如何用ChatGPT搞科研？',
@@ -157,7 +162,7 @@ const Users: User[] = [
     preview: require('./showcase/PythonPackage.png'),
     website: 'https://mp.weixin.qq.com/s/xjynbg4kX0sD-CAdFGzXxw',
     source: 'https://mp.weixin.qq.com/s/xjynbg4kX0sD-CAdFGzXxw',
-    tags: ['Treasury'],
+    tags: ['Tips'],
   },
   {
     title: '交叉熵损失(Cross-entropy)和平方损失(MSE)究竟有何区别？',
@@ -168,7 +173,7 @@ const Users: User[] = [
     tags: ['AI'],
   },
   {
-    title: '微软亚洲研究院最新工作｜DeepMIM：MIM中引入深度监督方法​',
+    title: '微软亚研院最新工作｜DeepMIM：MIM中引入深度监督方法​',
     description: 'DeepMIM旨在网络的浅层加入额外的监督，使得浅层特征的学习更有意义',
     preview: require('./showcase/DeepMIM.png'),
     website: 'https://mp.weixin.qq.com/s/suhOmVh9c4IwKt9kMfCRKA',
@@ -183,6 +188,159 @@ const Users: User[] = [
     source: 'https://arxiv.org/abs/2303.05312',
     tags: ['AI', 'CVPR'],
   },
+  {
+    title: 'CVPR2023|Lite DETR​',
+    description: '设计一个高效的编码器块,交错更新高级特征(小分辨率特征图)和低级特征(大分辨率特征图),为了更好地融合多尺度特征，开发一种key-aware的可变形注意力来预测更可靠的注意力权重',
+    preview: require('./showcase/LiteDETR.png'),
+    website: 'https://mp.weixin.qq.com/s/pfUc_Bmi06DD9nQeFF0V7g',
+    source: 'https://github.com/IDEA-Research/Lite-DETR',
+    tags: ['AI', 'CVPR', 'Transformer', 'Attention'],
+  },
+  {
+    title: 'CVPR2023|BiFormer​',
+    description: 'CVPR2023 即插即用系列! | BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构',
+    preview: require('./showcase/BiFormer.png'),
+    website: 'https://mp.weixin.qq.com/s/7JGIbNL1GZ3rZljCxRGxFg',
+    source: 'https://github.com/rayleizhu/BiFormer',
+    tags: ['AI', 'CVPR', 'Transformer', 'Attention'],
+  },
+  {
+    title: 'SCI论文中Methods最好写？​',
+    description: '别掉以轻心！写「材料和方法」部分时，这些坑千万别踩！',
+    preview: require('./showcase/Methods.png'),
+    website: 'https://mp.weixin.qq.com/s/sU0zhtAA-6lj2YRj-330PQ',
+    source: 'https://mp.weixin.qq.com/s/sU0zhtAA-6lj2YRj-330PQ',
+    tags: ['Writing'],
+  },
+  {
+    title: 'AI画手会画手了!Stable Diffusion学会想象,卷趴人类提示工程师​',
+    description: '趁我们不注意,AI画手一直在悄悄迭代,最近新推出的Stable Diffusion Reimagine和Midjourney v5功能如此强大,不仅要淘汰人类画师,连提示工程师的饭碗怕是都要丢了。',
+    preview: require('./showcase/Midjourney.png'),
+    website: 'https://mp.weixin.qq.com/s/EXw_9ssS5f6VA32IXfWMcQ',
+    source: 'https://clipdrop.co/stable-diffusion-reimagine',
+    tags: ['AI','DiffusionModel'],
+  },
+  {
+    title: 'Stable Diffusion公司新作Gen-1​',
+    description: 'Stable Diffusion公司新作Gen-1:基于扩散模型的视频合成新模型,加特效杠杠的!',
+    preview: require('./showcase/Gen-1.png'),
+    website: 'https://mp.weixin.qq.com/s/X5GrCefKz9hozd8eyT1fJA',
+    source: 'https://arxiv.org/pdf/2302.03011',
+    tags: ['AI','DiffusionModel'],
+  },
+  {
+    title: 'DSSM,Youtube_DNN,SASRec,PinSAGE…你都掌握了吗?',
+    description: '一文总结推荐系统必备经典模型(一),推荐系统是指利用电子商务网站向客户提供商品信息和建议，帮助用户决定应该购买什么产品，模拟销售人员帮助客户完成购买过程的系统。',
+    preview: require('./showcase/RecommendationSystems.png'),
+    website: 'https://mp.weixin.qq.com/s/vWTP9DrTRkm8pxlXAnjmYg',
+    source: 'https://mp.weixin.qq.com/s/vWTP9DrTRkm8pxlXAnjmYg',
+    tags: ['AI','RecommendationSystems'],
+  },
+  {
+    title: 'MAV3D (Make-A-Video3D)',
+    description: '一行文本,生成3D动态场景:Meta这个「一步到位」模型有点厉害,在最近的一篇论文中,来自Meta的研究者首次提出了可以从文本描述中生成三维动态场景的方法',
+    preview: require('./showcase/MAV3D.png'),
+    website: 'https://mp.weixin.qq.com/s/BSNIwA8SvQxOjwk-yTPmjA',
+    source: 'https://arxiv.org/abs/2301.11280',
+    tags: ['AI'],
+  },
+  {
+    title: 'CVPR2023|微软提出RODIN:首个3D扩散模型高质量生成效果,换装改形象一句话搞定!',
+    description: '近日,由微软亚研院提出的Roll-out Diffusion Network (RODIN)模型,首次实现了利用生成扩散模型在3D训练数据上自动生成 3D 数字化身(Avatar)的功能',
+    preview: require('./showcase/RODIN.png'),
+    website: 'https://mp.weixin.qq.com/s/GNyUXkx9YDj3n7Iq133wZA',
+    source: 'https://arxiv.org/abs/2212.06135',
+    tags: ['AI','DiffusionModel'],
+  },
+  {
+    title: 'GPT-3解数学题准确率升至92.5%!',
+    description: 'ChatGPT的文科脑有救了!微软提出MathPrompter,无需微调即可打造「理科」语言模型',
+    preview: require('./showcase/MathPrompter.png'),
+    website: 'https://mp.weixin.qq.com/s/vhGUZlwsUqSN4zoA5mNEiw',
+    source: 'https://arxiv.org/abs/2303.05398',
+    tags: ['AI','ChatGPT'],
+  },
+  {
+    title: '孔乙己终结者!GPT-4拿100美元自创业,还要让马斯克下岗',
+    description: 'GPT-4引发的新一波革命，把打工人推上了「断头台」。孔乙己的未来在哪里？',
+    preview: require('./showcase/GPT4.png'),
+    website: 'https://mp.weixin.qq.com/s/npduP_Rr5sngZudWTFoYbw',
+    source: 'https://mp.weixin.qq.com/s/npduP_Rr5sngZudWTFoYbw',
+    tags: ['AI','GPT4'],
+  },
+  {
+    title: '朱俊彦CVPR新作GigaGAN',
+    description: 'GAN的反击:朱俊彦CVPR新作GigaGAN,出图速度秒杀Stable Diffusion',
+    preview: require('./showcase/GigaGAN.png'),
+    website: 'https://mp.weixin.qq.com/s/bYvrijfdH2wYNl65lX6ywQ',
+    source: 'https://arxiv.org/abs/2303.05511',
+    tags: ['AI','GAN'],
+  },
+  {
+    title: '元乘象 Chatlmg',
+    description: '会看图的「ChatGPT」来了!给张图就能聊天、讲故事、写广告',
+    preview: require('./showcase/Chatlmg.png'),
+    website: 'https://mp.weixin.qq.com/s/uZiYpKQOxyXaVX_3wNq1DQ',
+    source: 'https://mp.weixin.qq.com/s/uZiYpKQOxyXaVX_3wNq1DQ',
+    tags: ['AI','ChatGPT'],
+  },
+  {
+    title: '邓嘉团队提出最新力作ParNet',
+    description: '12层也能媲美ResNet?邓嘉团队提出最新力作ParNet,ImageNet top1精度直冲80.7%',
+    preview: require('./showcase/ParNet.png'),
+    website: 'https://mp.weixin.qq.com/s/EuzokZXE6QZ0U1KBU5RAwA',
+    source: 'https://arxiv.org/pdf/2110.07641.pdf',
+    tags: ['AI'],
+  },
+  {
+    title: '没想到Dropou还藏了一手!不仅可以防止过拟合,也可以减小欠拟合?',
+    description: '来自FAIR,Meta AI,UC Berkeley,MBZUAI的研究员们继续对Dropout进行了探索,证明了在训练开始时使用Dropout也可以缓解欠拟合。',
+    preview: require('./showcase/Dropout.png'),
+    website: 'https://mp.weixin.qq.com/s/ZkCw-4gNDwEbibUUqo9SRQ',
+    source: 'https://arxiv.org/pdf/2303.01500.pdf',
+    tags: ['AI'],
+  },
+  {
+    title: '深度学习刷SOTA的trick盘点',
+    description: '盘点了一些在深度学习中常用的、好用的提升模型效果的trick,建议收藏!',
+    preview: require('./showcase/SOTATrick.png'),
+    website: 'https://mp.weixin.qq.com/s/WGq1ODy-rFo9IqPb1rQ2jg',
+    source: 'https://mp.weixin.qq.com/s/WGq1ODy-rFo9IqPb1rQ2jg',
+    tags: ['AI','Tips'],
+  },
+  {
+    title: '谷歌大脑深度学习调参(炼丹)指南出炉,Hinton点赞,一天收获1500星',
+    description: '为了破除「迷信」,高举科学旗帜,近日来自谷歌大脑、哈佛大学的研究人员发布了《Deep Learning Tuning Playbook》,旨在帮助大家解决这一AI领域的老大难问题',
+    preview: require('./showcase/TuningPlaybook.png'),
+    website: 'https://mp.weixin.qq.com/s/X5JVsLXSJs4oCIXgmbkmmg',
+    source: 'https://github.com/google-research/tuning_playbook',
+    tags: ['AI','Tips'],
+  },
+  {
+    title: '理解并统一14种归因算法,让神经网络具有可解释性',
+    description: '理解并统一14种归因算法,让神经网络具有可解释性',
+    preview: require('./showcase/AttributionAlgorithm.png'),
+    website: 'https://mp.weixin.qq.com/s/G3CM4dwQ5DIODlNAQNPayQ',
+    source: 'https://arxiv.org/pdf/2303.01506.pdf',
+    tags: ['AI'],
+  },
+  {
+    title: '理解并统一14种归因算法,让神经网络具有可解释性',
+    description: '理解并统一14种归因算法,让神经网络具有可解释性',
+    preview: require('./showcase/AttributionAlgorithm.png'),
+    website: 'https://mp.weixin.qq.com/s/G3CM4dwQ5DIODlNAQNPayQ',
+    source: 'https://arxiv.org/pdf/2303.01506.pdf',
+    tags: ['AI'],
+  },
+  {
+    title: '一文看懂CV中的注意力机制',
+    description: '一文看懂CV中的注意力机制',
+    preview: require('./showcase/Attention.png'),
+    website: 'https://mp.weixin.qq.com/s/Hy_P3-2KTZcfp1cMV7Hxpw',
+    source: 'https://mp.weixin.qq.com/s/Hy_P3-2KTZcfp1cMV7Hxpw',
+    tags: ['AI','Attention'],
+  },
+
 
   /*
   Pro Tip: add your site in alphabetical order.
@@ -256,11 +414,11 @@ export const Tags: {[type in TagType]: Tag} = {
     }),
     color: '#4267b2',
   },
-  SelfAttention: {
-    label: translate({message: 'Self-Attention'}),
+  Attention: {
+    label: translate({message: 'Attention'}),
     description: translate({
-      message: 'Self-attention is a mechanism that allows an algorithm to look at other positions in the input sequence for clues!',
-      id: 'showcase.tag.SelfAttention.description',
+      message: 'Attention is a mechanism that allows an algorithm to look at other positions in the input sequence for clues!',
+      id: 'showcase.tag.Attention.description',
     }),
     color: '#dfd545',
   },
@@ -280,11 +438,11 @@ export const Tags: {[type in TagType]: Tag} = {
     }),
     color: '#127f82',
   },
-  Treasury: {
-    label: translate({message: 'Treasury'}),
+  Tips: {
+    label: translate({message: 'Tips'}),
     description: translate({
-      message: 'Treasury!',
-      id: 'showcase.tag.Treasury.description',
+      message: 'Tips!',
+      id: 'showcase.tag.Tips.description',
     }),
     color: '#14cfc3',
   },
@@ -295,6 +453,46 @@ export const Tags: {[type in TagType]: Tag} = {
       id: 'showcase.tag.Transformer.description',
     }),
     color: '#ffcfc3',
+  },
+  ResNet: {
+    label: translate({message: 'ResNet'}),
+    description: translate({
+      message: 'ResNet network, a technique called skip connections is used.',
+      id: 'showcase.tag.ResNet.description',
+    }),
+    color: '#e9669e',
+  },
+  ActiveLearning: {
+    label: translate({message: 'Active-Learning'}),
+    description: translate({
+      message: 'Active Learning is an instructional method that engages students in the learning process beyond listening and passive note-taking',
+      id: 'showcase.tag.ActiveLearning.description',
+    }),
+    color: '#dfd545',
+  },
+  DiffusionModel: {
+    label: translate({message: 'Diffusion-Model'}),
+    description: translate({
+      message: 'Diffusion models work by destroying training data through the successive addition of Gaussian noise, and then learning to recover the data by reversing this noising',
+      id: 'showcase.tag.DiffusionModel.description',
+    }),
+    color: '#14cfc3',
+  },
+  RecommendationSystems: {
+    label: translate({message: 'Recommendation-Systems'}),
+    description: translate({
+      message: 'Recommendation systems are AI software that recommend products and services to users based on their preferences and choices',
+      id: 'showcase.tag.RecommendationSystems.description',
+    }),
+    color: '#4267b2',
+  },
+  GAN: {
+    label: translate({message: 'GAN'}),
+    description: translate({
+      message: 'GAN is a type of AI model that consists of two separate neural networks that are pitted against each other in a game-like scenario',
+      id: 'showcase.tag.GAN.description',
+    }),
+    color: '#fe6829',
   },
 };
 
