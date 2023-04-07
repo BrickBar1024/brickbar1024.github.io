@@ -46,4 +46,8 @@ tags: [Memo]
     \left **\lceil**\frac{c}{d} \right **\rceil**    **$\Rightarrow$**    $\left \lceil\frac{c}{d} \right \rceil$
     
 
-7.
+7. 大于等于、小于等于
+
+   \geq 、\leq   $\Rightarrow$ $\geq$  $\leq$
+
+8. 

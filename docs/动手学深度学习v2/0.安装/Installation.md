@@ -1,4 +1,4 @@
-# 03 安装
+# Installation
 
 教材：[zh-v2.d2l.ai](https://zh-v2.d2l.ai/chapter_installation/index.html)
 
