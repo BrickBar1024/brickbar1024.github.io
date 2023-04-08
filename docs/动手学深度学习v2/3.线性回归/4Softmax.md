@@ -1,12 +1,16 @@
-# 09 Softmax回归+损失函数+图片分类数据集
+# 4 Softmax回归+损失函数
 
-## Softmax回归
+沐神视频讲解：[B站](https://www.bilibili.com/video/BV1K64y1Q7wu)
+
+教材：[zh-v2.d2l.ai](https://zh-v2.d2l.ai/chapter_linear-networks/softmax-regression.html)
+
+## 4.1 Softmax回归
 
 虽然叫回归，但是是一个分类问题
 
 ![img](./src/Softmax/img.png)
 
-### 回归 VS 分类
+### 4.1.1 回归 VS 分类
 
 - 回归估计一个连续值
 - 分类预测一个离散类别
@@ -14,13 +18,13 @@
     ![img](./src/Softmax/img1.png)
     
 
-### Kaggle上的分类问题
+### 4.1.2 Kaggle上的分类问题
 
 [将人类蛋白质显微镜图片分成28类](https://www.kaggle.com/c/human-protein-atlas-image-classification)
 
 ![img](./src/Softmax/img2.png)
 
-[将恶意软件分成9个类别](https://www.kaggle.com/c/malware-classification)
+[将恶意软件分成4个类别](https://www.kaggle.com/c/malware-classification)
 
 ![img](./src/Softmax/img3.png)
 
@@ -28,13 +32,13 @@
 
 ![img](./src/Softmax/img4.png)
 
-### 从回归到多类分类
+### 4.1.3 从回归到多类分类
 
-#### 1、定义
+#### 4.1.3.1 定义
 
 ![img](./src/Softmax/img5.png)
 
-#### 2、均方损失
+#### 4.1.3.2 均方损失
 
 - 对类别进行一位有效编码
     - $y = [y_1, y_2, …, y_n]^T$
@@ -45,7 +49,7 @@
     $\hat{y} = \mathop{argmax}\limits_{i}\ o_i$
     
 
-#### 3、无校验比例
+#### 4.1.3.3 无校验比例
 
 - 对类别进行一位有效编码
 - 最大值最为预测
@@ -57,7 +61,7 @@
     $o_y - o_i \geq \Delta(y,i)$
     
 
-#### 4、校验比例
+#### 4.1.3.4 校验比例
 
 - 输出匹配概率(非负，和为1)
   
@@ -69,7 +73,7 @@
     
 - 概率$y$和$\hat{y}$的区别作为损失
 
-### Softmax和交叉熵损失
+### 4.1.4 Softmax和交叉熵损失
 
 - *交叉熵损失*(cross-entropy loss)常用来衡量两个概率的区别
   
@@ -84,11 +88,11 @@
     $\partial_{oj}l(y, \hat{y}) = \frac{exp(o_j)}{\sum^q_{k=1}exp(o_k)}-y_j = softmax(o)_j - y_j$
     
 
-## 损失函数
+## 4.2 损失函数
 
 ![img](./src/Softmax/img6.png)
 
-### 1、L2 Loss
+### 4.2.1 L2 Loss
 
 $l(y,y^’) = \frac{1}{2}(y - y')^2$
 
@@ -108,11 +112,11 @@ $l(y,y^’) = \frac{1}{2}(y - y')^2$
 
 (不是特别好的事情：当离原点比较远的值的时候，不一定想要那么大的梯度来更新参数，所以可以考虑绝对值损失函数L1 Loss
 
-### 2、L1 Loss
+### 4.2.2 L1 Loss
 
 $l(y,y^’)  = \lvert y - y^’ \rvert$
 
-![img](./src/Softmax/img9.png)
+![img](./src/Softmax/img4.png)
 
 当真实值与预测值差别比较大的时候，不管多远，梯度都是常数，权重更新也不会很大，带来很多稳定性的好处
 
@@ -122,7 +126,7 @@ $l(y,y^’)  = \lvert y - y^’ \rvert$
 
 不管多远，梯度基本上是帮你以同样的力度往原点扯
 
-### 3、Huber’ s Robust Loss
+### 4.2.3 Huber’ s Robust Loss
 
 结合L1、L2的优点，避免他们的缺点
 
@@ -132,7 +136,7 @@ $l(y,y^’)  = \lvert y - y^’ \rvert$
 
 当预测值和真实值差的比较远的时候，均匀的力度拉，但靠近原点的时候，优化末期的时候，梯度的绝对值越来越小，保证优化比较平滑，而不会出现太多数值上的问题
 
-## 图像分类数据集
+## 4.3 图像分类数据集
 
 MNIST是图像分类中广泛使用的数据集之一，但作为基准数据集过于简单。我们将使用类似但更复杂的Fashion-MNIST数据集
 
@@ -189,7 +193,7 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 
 ```python
 X, y = next(iter(data.DataLoader(mnist_train, batch_size=18)))
-show_images(X.reshape(18, 28, 28), 2, 9, titles=get_fashion_mnist_labels(y));
+show_images(X.reshape(18, 28, 28), 2, 4, titles=get_fashion_mnist_labels(y));
 ```
 
 读取一小批量数据，大小为batch_size
@@ -235,7 +239,7 @@ for X, y in train_iter:
     break
 ```
 
-## Softmax回归的从零开始实现
+## 4.4 Softmax回归的从零开始实现
 
 ```python
 import torch
@@ -266,12 +270,12 @@ X.sum(0, keepdim=True), X.sum(1, keepdim=True)
 
 - Output
   
-    (tensor([[5., 7., 9.]]), tensor([[ 6.], [15.]]))
+    (tensor([[5., 7., 4.]]), tensor([[ 6.], [15.]]))
     
 
 实现softmax
 
-![img](./src/Softmax/img13.png)
+$softmax(X)_{ij} = \frac{exp(X_{ij})}{\sum_k exp(X_{ik})}$
 
 ```python
 def softmax(X):
@@ -290,7 +294,7 @@ X_prob, X_prob.sum(1)
 
 - Output
   
-    (tensor([[0.2968, 0.4115, 0.0945, 0.1603, 0.0368],[0.2128, 0.5422, 0.0865, 0.1104, 0.0481]]),
+    (tensor([[0.2468, 0.4115, 0.0445, 0.1603, 0.0368],[0.2128, 0.5422, 0.0865, 0.1104, 0.0481]]),
     tensor([1.0000, 1.0000]))
     
 
@@ -332,7 +336,7 @@ cross_entropy(y_hat, y)
 
 - Output
   
-    tensor([2.3026, 0.6931])
+    tensor([2.3026, 0.6431])
     
 
 将预测类别与真实y元素进行比较
@@ -462,7 +466,7 @@ class Animator:
 ```python
 def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):  
     """训练模型（定义见第3章）"""
-    animator = Animator(xlabel='epoch', xlim=[1, num_epochs], ylim=[0.3, 0.9],
+    animator = Animator(xlabel='epoch', xlim=[1, num_epochs], ylim=[0.3, 0.4],
                         legend=['train loss', 'train acc', 'test acc'])
     for epoch in range(num_epochs):
         train_metrics = train_epoch_ch3(net, train_iter, loss, updater)
@@ -516,7 +520,7 @@ predict_ch3(net, test_iter)
     ![img](./src/Softmax/img15.png)
     
 
-## softmax回归的简洁实现
+## 4.5 softmax回归的简洁实现
 
 通过深度学习框架的高级API能够实现softmax回归变得更加容易
 
