@@ -11,9 +11,13 @@ tags: [Memo]
 
 1. 把下标放在某个文字或者符号正下方 \limits
    
-    符号是数学符号：\sum\limits _{i=0}^n {x_i}     $\Rightarrow$    $\sum\limits _{i=0}^n {x_i}$
+    符号是数学符号：\sum\limits _{i=0}^n {x_i}     $\Rightarrow$    
     
-    不是数学符号： \mathop{argmin}\limits _{w,b} L(w,b)    $\Rightarrow$     $\mathop{argmin}\limits _{w,b} L(w,b)$
+    $\sum\limits_{i=0}^n {x_i}$
+    
+    不是数学符号： \mathop{argmin}\limits _{w,b} L(w,b)    $\Rightarrow$ 
+    
+     $\mathop{argmin}\limits_{w,b} L(w,b)$
     
 2. 偏导符号：\partial
    
@@ -22,6 +26,8 @@ tags: [Memo]
 3. 箭头
    
     **\leftarrow**  $\leftarrow$
+    
+    **\rightarrow**  $\rightarrow$
     
     **\Leftrightarrow** $\Leftrightarrow$
     
@@ -45,7 +51,6 @@ tags: [Memo]
     
     \left **\lceil**\frac{c}{d} \right **\rceil**    **$\Rightarrow$**    $\left \lceil\frac{c}{d} \right \rceil$
     
-
 7. 大于等于、小于等于
 
    \geq 、\leq   $\Rightarrow$ $\geq$  $\leq$
