@@ -13,12 +13,13 @@
   --ifm-color-primary-light: #f28f7b;
   --ifm-color-primary-lighter: #f7b9ac;
   --ifm-color-primary-lightest: #f3cdc6;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-code-font-size: 100%;
+  --ifm-font-family-base: "sans-serif";
   --site-color-svg-icon-favorite: #e9669e;
   --site-color-favorite-background: #fffafa;
 
 }
+
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -33,6 +34,24 @@
   --site-color-favorite-background: #1d1e1e;
   --site-color-checkbox-checked-bg: hsl(167deg 56% 73% / 10%);
 }
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-doc-sidebar-menu > li > a {
+  /* font-weight: 700; */
+  padding: 0.5rem 1rem;
+  /* font-size: 1.1em; */
+}
+
 .friend-item {
   user-select: none;
   cursor: pointer;
@@ -149,8 +168,9 @@
 }
 h1 { font-size: 2.2rem !important; }
 
+
 .markdown p img:only-child {
-  max-width: 65%;
+  max-width: 80%;
   margin:0 auto;
   display:block;
 }
@@ -183,3 +203,29 @@ div[class^='announcementBar_'] {
   font-weight:600;
 }
 
+.blog-list-page article {
+  box-shadow: 3px 3px 10px #7777;
+  border-radius: 19px;
+  padding: 20px;
+  margin-bottom: 20px !important;
+}
+
+.blog-list-page article .markdown h2 {
+  font-size: 26px;
+  
+}
+
+.blog-list-page article > header > h2 {
+  font-size: 30px;
+}
+
+.blog-list-page main {
+  --ifm-col-width: calc(9 / 12 * 100%)!important;
+  
+}
+
+@media (max-width: 996px) {
+  .blog-list-page main {
+    --ifm-col-width: 100%!important;
+  }
+}
