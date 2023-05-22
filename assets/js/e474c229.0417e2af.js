@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbrick_bar=self.webpackChunkbrick_bar||[]).push([[1542],{946:e=>{e.exports=JSON.parse('{"title":"All posts","items":[{"title":"Intro","permalink":"/paper/[00]intro"},{"title":"AlexNet","permalink":"/paper/ImageNet Classification with Deep Convolutional Neural Network"}]}')}}]);
