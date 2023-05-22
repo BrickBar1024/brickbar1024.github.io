@@ -22,12 +22,11 @@ interface FriendData {
 }
 
 function githubPic(name: string) {
-  return `https://github.yuuza.net/${name}.png`;
+  return `https://avatars.githubusercontent.com/u/${name}?v=4`;
 }
-
 var friendsData: FriendData[] = [
   {
-    pic: githubPic("JoyceLiang-sudo"),
+    pic: githubPic("56100984"),
     name: "Zhiying Liang",
     intro: "深度潜水选手",
     url: "http://joyceliang.club/",
@@ -35,7 +34,7 @@ var friendsData: FriendData[] = [
     ip:"Graduate Student, Biomedical Engineering School, ShanghaiTech University",
   },
   {
-    pic: githubPic("lealaxy"),
+    pic: githubPic("62140756"),
     name: "Yunhao Li",
     intro: "刚入门炼丹，正在努力炼出一炉好丹药",
     url: "https://peterli.club/",
